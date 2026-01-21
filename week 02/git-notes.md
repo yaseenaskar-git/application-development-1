@@ -19,7 +19,9 @@ In the context of Git Bash (which is a tool used to interact with the staging ar
 
 ```bash
 git add file1
+
 git add file2
+
 git commit -m "added files 1 and 2"
 ```
 
