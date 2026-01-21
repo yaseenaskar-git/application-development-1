@@ -17,14 +17,11 @@ The staging area is where your edited files are (conceptually) before being comm
 
 In the context of Git Bash (which is a tool used to interact with the staging area), if you change one file and directly commit it, it might seem like there is no such thing as a staging area. On the other hand, if you edit 10 files and only two are ready to commit, you command:
 
-```cmd
-git add file1```
-
-```cmd
-git add file2```
-
-```cmd
-git commit -m "added files 1 and 2"```
+```bash
+git add file1
+git add file2
+git commit -m "added files 1 and 2"
+```
 
 and the other 8 files that are not ready yet will stay safe as files one and two are staged and committed.
 
