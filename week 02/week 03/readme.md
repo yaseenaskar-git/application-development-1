@@ -6,7 +6,7 @@ I previously tried to create a web app (not for academic purposes), and as a res
 ### Resources used
 As I have no prior learning experience with JS, I did some google searches and used chatGPT to understand some JS basics. Moreover, I also used ChatGPT for trouble shooting and error handling. 
 
-![Google Searches](<Screenshot (28)-1.png>)
+![Google Search](<Screenshot (28).png>)
 
 Link to full ChatGPT chat log: https://chatgpt.com/share/697d35ac-4c50-800c-b322-ed56faa21ccc
 
