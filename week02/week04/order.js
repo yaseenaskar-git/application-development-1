@@ -3,13 +3,13 @@ console.info("Program Started")
 function calculateTotal(price, quantity) {
   if (price <= 0 || quantity <= 0) {
     console.error("Price or Quantity cant be 0 or less!");
-    throw new Error("InvalidInput: price or quantity cant be 0 or less")
+    throw new Error("Invalid input: Price or Quantity cant be 0 or less!")
   }  
   console.info("calculated total:", price * quantity);  
   return price * quantity;
 }
 
-discount = 20;
+const discount = 20;
 
 function applyDiscount(total) {
   if (total > 100) {

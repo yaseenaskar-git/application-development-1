@@ -38,3 +38,49 @@ test("edge case when total equal exactly 100", () => {
   // Assert
   expect(result).toBe(expected);
 });
+
+test("invalid input, negative price", () => {
+  // Arrange
+  const price = -25;
+  const quantity = 4;
+  const expected = (100).toFixed(2);
+
+  // Act & Assert
+  expect(() => processOrder(price, quantity)).toThrow(
+    "Invalid input: Price or Quantity cant be 0 or less!"
+  );
+});
+
+test("invalid input, negative quantity", () => {
+  // Arrange
+  const price = 25;
+  const quantity = -1;
+  const expected = (100).toFixed(2);
+
+  // Act & Assert
+  expect(() => processOrder(price, quantity)).toThrow(
+    "Invalid input: Price or Quantity cant be 0 or less!"
+  );
+});
+
+test("invalid input, quantity = 0", () => {
+  // Arrange
+  const price = 25;
+  const quantity = 0;
+
+  // Act & Assert
+  expect(() => processOrder(price, quantity)).toThrow(
+    "Invalid input: Price or Quantity cant be 0 or less!"
+  );
+});
+
+test("invalid input, price = 0", () => {
+  // Arrange
+  const price = 0;
+  const quantity = 4;
+
+  // Act & Assert
+  expect(() => processOrder(price, quantity)).toThrow(
+    "Invalid input: Price or Quantity cant be 0 or less!"
+  );
+});
