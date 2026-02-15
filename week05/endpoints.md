@@ -17,7 +17,7 @@ Returns a single user
 PATCH 
 /orders/{orderId} 
 Updates an existing order 
-200 OK: success wit body
+204 No Content: success without body
 
 ### Packages
 
