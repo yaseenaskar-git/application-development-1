@@ -8,6 +8,11 @@ Returns a collection of users
 200 OK: success wit body
 
 GET 
+/packages 
+Returns a collection of packages 
+200 OK: success wit body
+
+GET 
 /users/{userId} 
 Returns a single user 
 200 OK: success wit body
