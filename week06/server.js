@@ -24,7 +24,19 @@ let nextOrderId = 1;
 
 // GET /packages - list all packages
 app.get('/packages', (req, res) => {
-    res.status(200).json(packages);
+    const page = parseInt(req.query.page) || 1;
+    const limit = parseInt(req.query.limit) || 10;
+
+    const startIndex = (page - 1) * limit;
+    const endIndex = startIndex + limit;
+
+    const paginatedData = packages.slice(startIndex, endIndex);
+    const total = packages.length;
+
+    res.status(200).json({
+        data: paginatedData,
+        meta: { page, limit, total }
+    });
 });
 
 // GET /packages/:id - get one package
