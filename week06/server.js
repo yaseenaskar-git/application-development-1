@@ -1,3 +1,10 @@
+app.use(express.json());
+
+const logger = require('./middleware/logger');
+
+// Apply globally (runs for every request)
+app.use(logger);
+
 // server.js
 const express = require('express');
 const app = express();
@@ -105,4 +112,15 @@ app.delete('/orders/:id', (req, res) => {
 const PORT = 3000;
 app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
+});
+
+// 404 handler
+app.use((req, res) => {
+    res.status(404).json({
+        error: {
+            code: "NOT_FOUND",
+            message: "Resource not found",
+            details: []
+        }
+    });
 });
