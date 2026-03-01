@@ -1,4 +1,4 @@
-## week 07 screenshots
+## Week 07 screenshots
 
 ### Time middleware tests
 
