@@ -1,27 +1,33 @@
-// server.js
-const express = require('express');
+const express = require("express");
 const app = express();
 
-// Middleware
-app.use(express.json());
-const logger = require('./middleware/logger');
-app.use(logger);
+// Routes
+const packageRoutes = require("./routes/packages");
+const orderRoutes = require("./routes/orders");
+
+// Middlewares
+const logger = require("./middleware/logger");
+const timer = require("./middleware/timer");
+
+app.use(express.json());     // JSON parsing
+app.use(logger);             // Request logging
+app.use(timer);              // Timing middleware
 
 // Routes
-const packagesRoutes = require('./routes/packages');
-const ordersRoutes = require('./routes/orders');
-
-app.use('/packages', packagesRoutes);
-app.use('/orders', ordersRoutes);
+app.use("/packages", packageRoutes);
+app.use("/orders", orderRoutes);
 
 // 404 handler
 app.use((req, res) => {
     res.status(404).json({
-        error: { code: "NOT_FOUND", message: "Resource not found" }
+        error: {
+            code: "NOT_FOUND",
+            message: "Route not found"
+        }
     });
 });
 
 const PORT = 3000;
 app.listen(PORT, () => {
-    console.log(`Server running at http://localhost:${PORT}`);
+    console.log(`Server running on port ${PORT}`);
 });
