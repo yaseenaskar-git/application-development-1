@@ -11,7 +11,7 @@ router.get('/', packagesController.listPackages);
 router.get('/:id', packagesController.getPackage);
 
 // Protected routes
-router.post('/', apiKey, validatePackage, packagesController.createPackage);
+router.post('/', validatePackage, packagesController.createPackage, apiKey);
 router.patch('/:id', apiKey, validatePackage, packagesController.updatePackage);
 router.delete('/:id', apiKey, packagesController.deletePackage);
 
