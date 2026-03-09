@@ -168,7 +168,7 @@ userId (integer) – reference to user
 
 packages (array) – list of package IDs
 
-status (string) – e.g., "pending", "completed"
+status (string) – "pending", "completed"
 
 ### 1. GET /orders
 
