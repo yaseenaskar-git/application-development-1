@@ -1,7 +1,7 @@
 # Design rationale
 
 ### Why were the following resources chosen?
-Users, products, and orders were chosen as the main resources because I think that they form the base for the e-commerce domain.
+Users, packages, and orders were chosen as the main resources because I think that they form the base for the e-commerce domain.
 
 ### Why was PATCH used rather than PUT?
 I selected PATCH rather than PUT because it makes sense for the information of the orders of the users to be updated as they change their mind on the packages they want. Moreover, I used PATCH rather than PUT to update objects rather than having users send new ones.
