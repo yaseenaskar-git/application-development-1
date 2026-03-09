@@ -107,3 +107,12 @@ Content-Type: application/json
         "message": "API key missing or invalid"
     }
 }
+
+## Linting
+
+To run ESLint on this project:
+
+```bash
+npm run lint
+```
+There were no error found to fix do the files were kept the same
