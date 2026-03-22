@@ -11,10 +11,10 @@ My database represents a task management system, allowing different individuals 
 ### Table relationships
 
 #### Projects table and Users table
-Firstly, the user_id of the Users table is connected to the projects table to allow users to connect with the projects they are assigned. Therefore, user_id is a foreign key in the projects table.
+Firstly, the id of the Users table is connected to the projects table to allow users to connect with the projects they are assigned. Therefore, user_id is a foreign key in the projects table.
 
 #### Tasks table and Projects table
-Secondly, the project_id of the projects table is connected to the tasks table to allow the connection between projects and tasks to be completed for that project. Therefore, project_id is a foreign key in the tasks table.
+Secondly, the id of the projects table is connected to the tasks table to allow the connection between projects and tasks to be completed for that project. Therefore, project_id is a foreign key in the tasks table.
 
 ### What is a primary key?
 
