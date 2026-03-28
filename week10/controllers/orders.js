@@ -1,52 +1,76 @@
-const db = require("../db");
+const pool = require("../db");
 
 // GET /orders
-exports.getAllOrders = (req, res) => {
-  db.query("SELECT * FROM orders", (err, results) => {
-    if (err) return res.status(500).send(err);
-    res.json(results);
-  });
+exports.getAllOrders = async (req, res) => {
+  try {
+    const [rows] = await pool.query("SELECT * FROM orders");
+    res.json(rows);
+  } catch (err) {
+    res.status(500).send(err);
+  }
 };
 
 // GET /orders/:id
-exports.getOrderById = (req, res) => {
-  const id = req.params.id;
+exports.getOrderById = async (req, res) => {
+  try {
+    const id = req.params.id;
 
-  db.query("SELECT * FROM orders WHERE id = ?", [id], (err, results) => {
-    if (err) return res.status(500).send(err);
-    res.json(results[0]);
-  });
+    const [rows] = await pool.query(
+      "SELECT * FROM orders WHERE id = ?",
+      [id]
+    );
+
+    res.json(rows[0]);
+  } catch (err) {
+    res.status(500).send(err);
+  }
 };
 
 // POST /orders
-exports.createOrder = (req, res) => {
-  const { product, quantity, status } = req.body;
+exports.createOrder = async (req, res) => {
+  try {
+    const { product, quantity, status } = req.body;
 
-  const sql = "INSERT INTO orders (product, quantity, status) VALUES (?, ?, ?)";
-  db.query(sql, [product, quantity, status], (err, result) => {
-    if (err) return res.status(500).send(err);
+    const [result] = await pool.query(
+      "INSERT INTO orders (product, quantity, status) VALUES (?, ?, ?)",
+      [product, quantity, status]
+    );
+
     res.json({ message: "Order created", id: result.insertId });
-  });
+  } catch (err) {
+    res.status(500).send(err);
+  }
 };
 
 // PATCH /orders/:id
-exports.updateOrder = (req, res) => {
-  const id = req.params.id;
-  const { product, quantity, status } = req.body;
+exports.updateOrder = async (req, res) => {
+  try {
+    const id = req.params.id;
+    const { product, quantity, status } = req.body;
 
-  const sql = "UPDATE orders SET product = ?, quantity = ?, status = ? WHERE id = ?";
-  db.query(sql, [product, quantity, status, id], (err) => {
-    if (err) return res.status(500).send(err);
+    await pool.query(
+      "UPDATE orders SET product = ?, quantity = ?, status = ? WHERE id = ?",
+      [product, quantity, status, id]
+    );
+
     res.json({ message: "Order updated" });
-  });
+  } catch (err) {
+    res.status(500).send(err);
+  }
 };
 
 // DELETE /orders/:id
-exports.deleteOrder = (req, res) => {
-  const id = req.params.id;
+exports.deleteOrder = async (req, res) => {
+  try {
+    const id = req.params.id;
 
-  db.query("DELETE FROM orders WHERE id = ?", [id], (err) => {
-    if (err) return res.status(500).send(err);
+    await pool.query(
+      "DELETE FROM orders WHERE id = ?",
+      [id]
+    );
+
     res.json({ message: "Order deleted" });
-  });
+  } catch (err) {
+    res.status(500).send(err);
+  }
 };
