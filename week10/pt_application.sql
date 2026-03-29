@@ -31,5 +31,5 @@ VALUES
 
 INSERT INTO orders (product, quantity, status, package_id)
 VALUES
-('Shoes', 2, 'pending', 1),
-('Jersey', 1, 'completed', 2);
+('Basic Package', 1, 'pending', 1),
+('Pro Package', 1, 'completed', 2);
