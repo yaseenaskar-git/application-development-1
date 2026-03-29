@@ -1,3 +1,5 @@
+CREATE DATABASE pt_application;
+USE pt_application;
 
 -- TABLE: packages
 CREATE TABLE packages (
@@ -21,7 +23,7 @@ CREATE TABLE orders (
   ON DELETE SET NULL
 );
 
-"""-- SAMPLE DATA
+-- SAMPLE DATA
 INSERT INTO packages (name, price, description)
 VALUES 
 ('Basic Package', 19.99, 'Starter plan'),
@@ -30,4 +32,4 @@ VALUES
 INSERT INTO orders (product, quantity, status, package_id)
 VALUES
 ('Shoes', 2, 'pending', 1),
-('Jersey', 1, 'completed', 2);"""
+('Jersey', 1, 'completed', 2);
