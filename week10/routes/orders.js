@@ -6,8 +6,8 @@ const ordersController = require('../controllers/orders');
 const apiKey = require('../middleware/apiKey');
 
 // Public routes
-router.get('/', ordersController.listOrders);
-router.get('/:id', ordersController.getOrder);
+router.get('/', ordersController.getAllOrders);
+router.get('/:id', ordersController.getOrderById);
 
 // Protected routes
 router.post('/', apiKey, ordersController.createOrder);
