@@ -6,6 +6,7 @@ const PORT = 3000;
 
 // Parse JSON request bodies
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 // Session middleware
 app.use(
