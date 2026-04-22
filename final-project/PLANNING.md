@@ -49,3 +49,24 @@ npm initialized and express installed into project file
 1) npm init -y
 2) npm express install
 
+# Week 2
+
+### Database integration
+The first thing I am doing in week 2 was creating the database. To fill in some of the fields, I need to create a scenario to know what types of tasks and role I am going to create. So my scenario is a task manager for a group of developers.
+
+The roles will be:
+- Back-end developer
+- Front-end developer
+- Software Engineer (the boss)
+- Cybersecurity specialist
+
+Some task categories will be:
+- Back-end development 
+- Front-end development 
+- Testing 
+- Cloud Launching 
+
+One fix I implemented is to remove user_id foreign key from the category table because it was not necessary.
+
+The core of the database is complete with some sample data. only the hashed passwords remain.
+
