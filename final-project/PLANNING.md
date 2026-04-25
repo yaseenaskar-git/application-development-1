@@ -72,3 +72,10 @@ The core of the database is complete with some sample data. only the hashed pass
 - npm install bcrypt
 the original password is: password123
 
+### CRUD endpoints
+
+With the help of AI, I completed routes and controllers for tasks (my main resource). 
+
+### Authentication
+
+My user authentication is in middleware/users-mid.js
