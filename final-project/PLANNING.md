@@ -68,5 +68,7 @@ Some task categories will be:
 
 One fix I implemented is to remove user_id foreign key from the category table because it was not necessary.
 
-The core of the database is complete with some sample data. only the hashed passwords remain.
+The core of the database is complete with some sample data. only the hashed passwords remain. These will be filled in once the hashing method is in place in the backend. For this, I went ahead and installed bcrypt:
+- npm install bcrypt
+the original password is: password123
 

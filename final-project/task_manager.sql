@@ -33,10 +33,10 @@ CREATE TABLE tasks (
 
 --Sample data
 INSERT INTO users (name, email, role, password_hash) VALUES
-('Aisha Khan', 'aisha.backend@example.com', 'Back-end developer', 'hashed_password_1'),
-('Liam Parker', 'liam.frontend@example.com', 'Front-end developer', 'hashed_password_2'),
-('Sophia Reyes', 'sophia.engineer@example.com', 'Software Engineer', 'hashed_password_3'),
-('Noah Carter', 'noah.cyber@example.com', 'Cybersecurity specialist', 'hashed_password_4');
+('Aisha Khan', 'aisha.backend@example.com', 'Back-end developer', '$2b$10$6ofXeCuo21jYqIDos0o6HOFl0xVw.WKDgMfqvmfVWMIUOGsVbRsxi'),
+('Liam Parker', 'liam.frontend@example.com', 'Front-end developer', '$2b$10$6ofXeCuo21jYqIDos0o6HOFl0xVw.WKDgMfqvmfVWMIUOGsVbRsxi'),
+('Sophia Reyes', 'sophia.engineer@example.com', 'Software Engineer', '$2b$10$6ofXeCuo21jYqIDos0o6HOFl0xVw.WKDgMfqvmfVWMIUOGsVbRsxi'),
+('Noah Carter', 'noah.cyber@example.com', 'Cybersecurity specialist', '$2b$10$6ofXeCuo21jYqIDos0o6HOFl0xVw.WKDgMfqvmfVWMIUOGsVbRsxi');
 
 INSERT INTO category (name) VALUES
 ('Back-end development'),
